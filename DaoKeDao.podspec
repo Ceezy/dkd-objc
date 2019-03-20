@@ -9,30 +9,27 @@ Pod::Spec.new do |s|
 #    s.social_media_url = ''
 
     s.platform     = :ios, '11.0'
-    s.requires_arc = 'Classes/**/*'
 
     s.public_header_files = 'Classes/DaoKeDao.h'
     s.source_files = 'Classes/DaoKeDao.h'
 
-#    s.frameworks = 'UIKit', 'Foundation', 'AVFoundation', 'AdSupport'
-
-    s.subspec 'content' do |ss|
-        ss.source_files = 'Classes/content/*.{h,m}'
-        ss.public_header_files = 'Classes/content/*.h'
-    end
+    s.frameworks = 'Foundation'
 
     s.subspec 'extends' do |ss|
         ss.source_files = 'Classes/extends/*.{h,m}'
         ss.public_header_files = 'Classes/extends/*.h'
     end
 
-    s.subspec 'message' do |ss|
-        ss.source_files = 'Classes/message/*.{h,m}'
-        ss.public_header_files = 'Classes/message/*.h'
-    end
-
     s.subspec 'types' do |ss|
         ss.source_files = 'Classes/types/*.{h,m}'
         ss.public_header_files = 'Classes/types/*.h'
+	ss.dependency 'DaoKeDao/extends'
+    end
+
+    s.subspec 'message' do |ss|
+        ss.source_files = 'Classes/message/*.{h,m}', 'Classes/content/*.{h,m}'
+        ss.public_header_files = 'Classes/message/*.h', 'Classes/content/*.h'
+	ss.dependency 'DaoKeDao/extends'
+	ss.dependency 'DaoKeDao/types'
     end
 end

@@ -16,7 +16,7 @@
 
 - (nullable NSMutableDictionary *)_prepareDataWithKey:(NSDictionary *)PW {
     DKDMessageContent *content = self.content;
-    NSData *data = [_delegate message:self encryptContent:content withKey:PW];
+    NSData *data = [self.delegate message:self encryptContent:content withKey:PW];
     if (!data) {
         NSAssert(false, @"failed to encrypt content with key: %@", PW);
         return nil;
@@ -28,7 +28,7 @@
 }
 
 - (nullable DKDSecureMessage *)encryptWithKey:(NSDictionary *)password {
-    NSAssert(_delegate, @"message delegate not set yet");
+    NSAssert(self.delegate, @"message delegate not set yet");
     // 1. encrypt 'content' to 'data'
     NSMutableDictionary *mDict;
     mDict = [self _prepareDataWithKey:password];
@@ -39,7 +39,7 @@
     // 2. encrypt password to 'key'
     const NSString *ID = self.envelope.receiver;
     NSData *key;
-    key = [_delegate message:self encryptKey:password forReceiver:ID];
+    key = [self.delegate message:self encryptKey:password forReceiver:ID];
     if (key) {
         [mDict setObject:[key base64Encode] forKey:@"key"];
     } else {
@@ -52,7 +52,7 @@
 
 - (nullable DKDSecureMessage *)encryptWithKey:(NSDictionary *)password
                                    forMembers:(const NSArray *)members {
-    NSAssert(_delegate, @"message delegate not set yet");
+    NSAssert(self.delegate, @"message delegate not set yet");
     // 1. encrypt 'content' to 'data'
     NSMutableDictionary *mDict;
     mDict = [self _prepareDataWithKey:password];
@@ -66,7 +66,7 @@
     keyMap = [[NSMutableDictionary alloc] initWithCapacity:members.count];
     NSData *key;
     for (NSString *ID in members) {
-        key = [_delegate message:self encryptKey:password forReceiver:ID];
+        key = [self.delegate message:self encryptKey:password forReceiver:ID];
         if (key) {
             [keyMap setObject:[key base64Encode] forKey:ID];
         }
@@ -87,13 +87,13 @@
                                               from:(const NSString *)sender
                                                 to:(const NSString *)receiver
                                              group:(nullable const NSString *)grp {
-    NSAssert(_delegate, @"message delegate not set yet");
+    NSAssert(self.delegate, @"message delegate not set yet");
     // 1. decrypt 'key' to symmetric key
-    NSDictionary *PW = [_delegate message:self
-                           decryptKeyData:key
-                               fromSender:sender
-                               toReceiver:receiver
-                                  inGroup:grp];
+    NSDictionary *PW = [self.delegate message:self
+                               decryptKeyData:key
+                                   fromSender:sender
+                                   toReceiver:receiver
+                                      inGroup:grp];
     if (!PW) {
         NSLog(@"failed to decrypt symmetric key: %@", self);
         return nil;
@@ -101,7 +101,7 @@
     
     // 2. decrypt 'data' to 'content'
     DKDMessageContent *content;
-    content = [_delegate message:self decryptData:self.data withKey:PW];
+    content = [self.delegate message:self decryptData:self.data withKey:PW];
     if (!content) {
         NSLog(@"failed to decrypt message data: %@", self);
         return nil;
@@ -162,10 +162,10 @@
 - (nullable DKDReliableMessage *)sign {
     const NSString *sender = self.envelope.sender;
     NSData *data = self.data;
-    NSAssert(_delegate, @"message delegate not set yet");
+    NSAssert(self.delegate, @"message delegate not set yet");
     NSData *signature;
     // sign
-    signature = [_delegate message:self signData:data forSender:sender];
+    signature = [self.delegate message:self signData:data forSender:sender];
     if (!signature) {
         NSAssert(false, @"failed to sign message: %@", self);
         return nil;
@@ -184,11 +184,11 @@
     const NSString *sender = self.envelope.sender;
     NSData *data = self.data;
     NSData *signature = self.signature;
-    NSAssert(_delegate, @"message delegate not set yet");
-    BOOL correct = [_delegate message:self
-                           verifyData:data
-                        withSignature:signature
-                            forSender:sender];
+    NSAssert(self.delegate, @"message delegate not set yet");
+    BOOL correct = [self.delegate message:self
+                               verifyData:data
+                            withSignature:signature
+                                forSender:sender];
     if (!correct) {
         NSAssert(false, @"message signature not match: %@", self);
         return nil;

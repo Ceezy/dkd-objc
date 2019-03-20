@@ -5,7 +5,7 @@ Pod::Spec.new do |s|
     s.homepage         = "https://github.com/Ceezy/dkd-objc"
     s.license          = { :type => 'MIT', :file => 'LICENSE' }
     s.author           = { "Ceezy Chen" => "ceezychen@gmail.com" }
-    s.source           = { :git => "https://github.com/Ceezy/dkd-objc", :tag => s.version }
+    s.source           = { :git => "https://github.com/Ceezy/dkd-objc.git", :tag => s.version }
 #    s.social_media_url = ''
 
     s.platform     = :ios, '11.0'

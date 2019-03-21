@@ -6,7 +6,7 @@
 //  Copyright © 2018 DIM Group. All rights reserved.
 //
 
-#import "NSDate+Timestamp.h"
+#import "NSDate+DKD_Timestamp.h"
 
 #import "DKDEnvelope.h"
 
@@ -82,7 +82,7 @@
         // time
         NSNumber *timestamp = [_storeDictionary objectForKey:@"time"];
         //NSAssert(timestamp.doubleValue > 0, @"time error");
-        NSDate *time = NSDateFromNumber(timestamp);
+        NSDate *time = DKD_NSDateFromNumber(timestamp);
         
         _envelope = [[DKDEnvelope alloc] initWithSender:sender
                                                receiver:receier

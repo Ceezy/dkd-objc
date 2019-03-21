@@ -7,14 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E9BBBD31223A506000E6ACDA /* NSDate+Timestamp.h in Headers */ = {isa = PBXBuildFile; fileRef = E9BBBD2F223A506000E6ACDA /* NSDate+Timestamp.h */; };
-		E9BBBD32223A506000E6ACDA /* NSDate+Timestamp.m in Sources */ = {isa = PBXBuildFile; fileRef = E9BBBD30223A506000E6ACDA /* NSDate+Timestamp.m */; };
-		E9BBBD37223A9F5500E6ACDA /* NSData+Crypto.h in Headers */ = {isa = PBXBuildFile; fileRef = E9BBBD33223A9F5400E6ACDA /* NSData+Crypto.h */; };
-		E9BBBD38223A9F5500E6ACDA /* NSString+Crypto.mm in Sources */ = {isa = PBXBuildFile; fileRef = E9BBBD34223A9F5400E6ACDA /* NSString+Crypto.mm */; };
-		E9BBBD39223A9F5500E6ACDA /* NSString+Crypto.h in Headers */ = {isa = PBXBuildFile; fileRef = E9BBBD35223A9F5400E6ACDA /* NSString+Crypto.h */; };
-		E9BBBD3A223A9F5500E6ACDA /* NSData+Crypto.mm in Sources */ = {isa = PBXBuildFile; fileRef = E9BBBD36223A9F5400E6ACDA /* NSData+Crypto.mm */; };
-		E9BBBD3D223AA05A00E6ACDA /* NSObject+JsON.m in Sources */ = {isa = PBXBuildFile; fileRef = E9BBBD3B223AA05A00E6ACDA /* NSObject+JsON.m */; };
-		E9BBBD3E223AA05A00E6ACDA /* NSObject+JsON.h in Headers */ = {isa = PBXBuildFile; fileRef = E9BBBD3C223AA05A00E6ACDA /* NSObject+JsON.h */; };
+		E9BBBD31223A506000E6ACDA /* NSDate+DKD_Timestamp.h in Headers */ = {isa = PBXBuildFile; fileRef = E9BBBD2F223A506000E6ACDA /* NSDate+DKD_Timestamp.h */; };
+		E9BBBD32223A506000E6ACDA /* NSDate+DKD_Timestamp.m in Sources */ = {isa = PBXBuildFile; fileRef = E9BBBD30223A506000E6ACDA /* NSDate+DKD_Timestamp.m */; };
+		E9BBBD37223A9F5500E6ACDA /* NSData+DKD_Encode.h in Headers */ = {isa = PBXBuildFile; fileRef = E9BBBD33223A9F5400E6ACDA /* NSData+DKD_Encode.h */; };
+		E9BBBD38223A9F5500E6ACDA /* NSString+DKD_Encode.mm in Sources */ = {isa = PBXBuildFile; fileRef = E9BBBD34223A9F5400E6ACDA /* NSString+DKD_Encode.mm */; };
+		E9BBBD39223A9F5500E6ACDA /* NSString+DKD_Encode.h in Headers */ = {isa = PBXBuildFile; fileRef = E9BBBD35223A9F5400E6ACDA /* NSString+DKD_Encode.h */; };
+		E9BBBD3A223A9F5500E6ACDA /* NSData+DKD_Encode.mm in Sources */ = {isa = PBXBuildFile; fileRef = E9BBBD36223A9F5400E6ACDA /* NSData+DKD_Encode.mm */; };
+		E9BBBD3D223AA05A00E6ACDA /* NSObject+DKD_JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = E9BBBD3B223AA05A00E6ACDA /* NSObject+DKD_JSON.m */; };
+		E9BBBD3E223AA05A00E6ACDA /* NSObject+DKD_JSON.h in Headers */ = {isa = PBXBuildFile; fileRef = E9BBBD3C223AA05A00E6ACDA /* NSObject+DKD_JSON.h */; };
 		E9BBBDE7223B73A400E6ACDA /* DKDMessage+Transform.h in Headers */ = {isa = PBXBuildFile; fileRef = E9BBBDE5223B73A400E6ACDA /* DKDMessage+Transform.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E9BBBDE8223B73A400E6ACDA /* DKDMessage+Transform.m in Sources */ = {isa = PBXBuildFile; fileRef = E9BBBDE6223B73A400E6ACDA /* DKDMessage+Transform.m */; };
 		E9DC2EF22209E435005EE45F /* DKDMessageContent+History.h in Headers */ = {isa = PBXBuildFile; fileRef = E9DC2EF02209E435005EE45F /* DKDMessageContent+History.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -69,14 +69,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		E9BBBD2F223A506000E6ACDA /* NSDate+Timestamp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Timestamp.h"; sourceTree = "<group>"; };
-		E9BBBD30223A506000E6ACDA /* NSDate+Timestamp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Timestamp.m"; sourceTree = "<group>"; };
-		E9BBBD33223A9F5400E6ACDA /* NSData+Crypto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Crypto.h"; sourceTree = "<group>"; };
-		E9BBBD34223A9F5400E6ACDA /* NSString+Crypto.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "NSString+Crypto.mm"; sourceTree = "<group>"; };
-		E9BBBD35223A9F5400E6ACDA /* NSString+Crypto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Crypto.h"; sourceTree = "<group>"; };
-		E9BBBD36223A9F5400E6ACDA /* NSData+Crypto.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "NSData+Crypto.mm"; sourceTree = "<group>"; };
-		E9BBBD3B223AA05A00E6ACDA /* NSObject+JsON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+JsON.m"; sourceTree = "<group>"; };
-		E9BBBD3C223AA05A00E6ACDA /* NSObject+JsON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+JsON.h"; sourceTree = "<group>"; };
+		E9BBBD2F223A506000E6ACDA /* NSDate+DKD_Timestamp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+DKD_Timestamp.h"; sourceTree = "<group>"; };
+		E9BBBD30223A506000E6ACDA /* NSDate+DKD_Timestamp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+DKD_Timestamp.m"; sourceTree = "<group>"; };
+		E9BBBD33223A9F5400E6ACDA /* NSData+DKD_Encode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+DKD_Encode.h"; sourceTree = "<group>"; };
+		E9BBBD34223A9F5400E6ACDA /* NSString+DKD_Encode.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "NSString+DKD_Encode.mm"; sourceTree = "<group>"; };
+		E9BBBD35223A9F5400E6ACDA /* NSString+DKD_Encode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+DKD_Encode.h"; sourceTree = "<group>"; };
+		E9BBBD36223A9F5400E6ACDA /* NSData+DKD_Encode.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "NSData+DKD_Encode.mm"; sourceTree = "<group>"; };
+		E9BBBD3B223AA05A00E6ACDA /* NSObject+DKD_JSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+DKD_JSON.m"; sourceTree = "<group>"; };
+		E9BBBD3C223AA05A00E6ACDA /* NSObject+DKD_JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+DKD_JSON.h"; sourceTree = "<group>"; };
 		E9BBBDE5223B73A400E6ACDA /* DKDMessage+Transform.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DKDMessage+Transform.h"; sourceTree = "<group>"; };
 		E9BBBDE6223B73A400E6ACDA /* DKDMessage+Transform.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "DKDMessage+Transform.m"; sourceTree = "<group>"; };
 		E9DC2EF02209E435005EE45F /* DKDMessageContent+History.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DKDMessageContent+History.h"; sourceTree = "<group>"; };
@@ -145,14 +145,14 @@
 		E9BBBD2E223A506000E6ACDA /* extends */ = {
 			isa = PBXGroup;
 			children = (
-				E9BBBD2F223A506000E6ACDA /* NSDate+Timestamp.h */,
-				E9BBBD30223A506000E6ACDA /* NSDate+Timestamp.m */,
-				E9BBBD33223A9F5400E6ACDA /* NSData+Crypto.h */,
-				E9BBBD36223A9F5400E6ACDA /* NSData+Crypto.mm */,
-				E9BBBD35223A9F5400E6ACDA /* NSString+Crypto.h */,
-				E9BBBD34223A9F5400E6ACDA /* NSString+Crypto.mm */,
-				E9BBBD3C223AA05A00E6ACDA /* NSObject+JsON.h */,
-				E9BBBD3B223AA05A00E6ACDA /* NSObject+JsON.m */,
+				E9BBBD2F223A506000E6ACDA /* NSDate+DKD_Timestamp.h */,
+				E9BBBD30223A506000E6ACDA /* NSDate+DKD_Timestamp.m */,
+				E9BBBD33223A9F5400E6ACDA /* NSData+DKD_Encode.h */,
+				E9BBBD36223A9F5400E6ACDA /* NSData+DKD_Encode.mm */,
+				E9BBBD35223A9F5400E6ACDA /* NSString+DKD_Encode.h */,
+				E9BBBD34223A9F5400E6ACDA /* NSString+DKD_Encode.mm */,
+				E9BBBD3C223AA05A00E6ACDA /* NSObject+DKD_JSON.h */,
+				E9BBBD3B223AA05A00E6ACDA /* NSObject+DKD_JSON.m */,
 			);
 			path = extends;
 			sourceTree = "<group>";
@@ -292,17 +292,17 @@
 				E9F3AA1421CBC17F009690F6 /* DKDMessageContent+Image.h in Headers */,
 				E9F3AA1721CBC17F009690F6 /* DKDMessageContent+File.h in Headers */,
 				E9F3AA0C21CBC17F009690F6 /* DKDMessageContent+Quote.h in Headers */,
-				E9BBBD37223A9F5500E6ACDA /* NSData+Crypto.h in Headers */,
+				E9BBBD37223A9F5500E6ACDA /* NSData+DKD_Encode.h in Headers */,
 				E9F3AA1E21CBC17F009690F6 /* DKDInstantMessage.h in Headers */,
 				E9F3AA1D21CBC17F009690F6 /* DKDReliableMessage.h in Headers */,
-				E9BBBD39223A9F5500E6ACDA /* NSString+Crypto.h in Headers */,
-				E9BBBD3E223AA05A00E6ACDA /* NSObject+JsON.h in Headers */,
+				E9BBBD39223A9F5500E6ACDA /* NSString+DKD_Encode.h in Headers */,
+				E9BBBD3E223AA05A00E6ACDA /* NSObject+DKD_JSON.h in Headers */,
 				E9F3AA2121CBC17F009690F6 /* DKDSecureMessage.h in Headers */,
 				E9F83CAD21D5C31000B99B44 /* DKDSecureMessage+Packing.h in Headers */,
 				E9BBBDE7223B73A400E6ACDA /* DKDMessage+Transform.h in Headers */,
 				E9F3AA1A21CBC17F009690F6 /* DKDEnvelope.h in Headers */,
 				E9F3AA1F21CBC17F009690F6 /* DKDMessage.h in Headers */,
-				E9BBBD31223A506000E6ACDA /* NSDate+Timestamp.h in Headers */,
+				E9BBBD31223A506000E6ACDA /* NSDate+DKD_Timestamp.h in Headers */,
 				E9F3AA2521CBC17F009690F6 /* DaoKeDao.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -408,14 +408,14 @@
 				E9F3AA0B21CBC17F009690F6 /* DKDMessageContent.m in Sources */,
 				E9F3AA0D21CBC17F009690F6 /* DKDMessageContent+File.m in Sources */,
 				E9F3AA1921CBC17F009690F6 /* DKDSecureMessage.m in Sources */,
-				E9BBBD3A223A9F5500E6ACDA /* NSData+Crypto.mm in Sources */,
+				E9BBBD3A223A9F5500E6ACDA /* NSData+DKD_Encode.mm in Sources */,
 				E9F3AA2021CBC17F009690F6 /* DKDEnvelope.m in Sources */,
 				E9F3AA1221CBC17F009690F6 /* DKDMessageContent+Audio.m in Sources */,
 				E9F3AA2221CBC17F009690F6 /* DKDReliableMessage.m in Sources */,
 				E9F3AA0721CBC17F009690F6 /* DKDMessageContent+Text.m in Sources */,
 				E9F3AA1321CBC17F009690F6 /* DKDMessageContent+Command.m in Sources */,
 				E9F3AA0821CBC17F009690F6 /* DKDMessageContent+Image.m in Sources */,
-				E9BBBD3D223AA05A00E6ACDA /* NSObject+JsON.m in Sources */,
+				E9BBBD3D223AA05A00E6ACDA /* NSObject+DKD_JSON.m in Sources */,
 				E9F3AA1B21CBC17F009690F6 /* DKDMessage.m in Sources */,
 				E9F83CAE21D5C31000B99B44 /* DKDSecureMessage+Packing.m in Sources */,
 				E9BBBDE8223B73A400E6ACDA /* DKDMessage+Transform.m in Sources */,
@@ -424,8 +424,8 @@
 				E9F3AA1121CBC17F009690F6 /* DKDMessageContent+Forward.m in Sources */,
 				E9F3AA0321CBC17F009690F6 /* DKDDictionary.m in Sources */,
 				E9F3AA1521CBC17F009690F6 /* DKDMessageContent+Quote.m in Sources */,
-				E9BBBD32223A506000E6ACDA /* NSDate+Timestamp.m in Sources */,
-				E9BBBD38223A9F5500E6ACDA /* NSString+Crypto.mm in Sources */,
+				E9BBBD32223A506000E6ACDA /* NSDate+DKD_Timestamp.m in Sources */,
+				E9BBBD38223A9F5500E6ACDA /* NSString+DKD_Encode.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

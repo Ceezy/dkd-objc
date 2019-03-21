@@ -6,8 +6,8 @@
 //  Copyright © 2018 DIM Group. All rights reserved.
 //
 
-#import "NSData+Crypto.h"
-#import "NSString+Crypto.h"
+#import "NSData+DKD_Encode.h"
+#import "NSString+DKD_Encode.h"
 
 #import "DKDMessageContent+File.h"
 
@@ -23,7 +23,7 @@
         if (url) {
             [_storeDictionary setObject:url forKey:@"URL"];
         } else if (data) {
-            NSString *content = [data base64Encode];
+            NSString *content = [data dkd_base64Encode];
             [_storeDictionary setObject:content forKey:@"data"];
         }
         
@@ -59,7 +59,7 @@
     NSString *content = [_storeDictionary objectForKey:@"data"];
     if (content) {
         // decode file data
-        data = [content base64Decode];
+        data = [content dkd_base64Decode];
     } else {
         // get file data from URL
         NSURL *url = [self URL];

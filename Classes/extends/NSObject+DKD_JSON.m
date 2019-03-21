@@ -6,11 +6,11 @@
 //  Copyright © 2018 DIM Group. All rights reserved.
 //
 
-#import "NSObject+JsON.h"
+#import "NSObject+DKD_JSON.h"
 
-@implementation NSObject (JsON)
+@implementation NSObject (DKD_JSON)
 
-- (NSData *)jsonData {
+- (NSData *)dkd_jsonData {
     NSData *data = nil;
     
     if ([NSJSONSerialization isValidJSONObject:self]) {
@@ -26,23 +26,23 @@
     return data;
 }
 
-- (NSString *)jsonString {
-    return [[self jsonData] UTF8String];
+- (NSString *)dkd_jsonString {
+    return [[self dkd_jsonData] dkd_UTF8String];
 }
 
 @end
 
-@implementation NSString (Convert)
+@implementation NSString (DKD_Convert)
 
-- (NSData *)data {
+- (NSData *)dkd_data {
     return [self dataUsingEncoding:NSUTF8StringEncoding];
 }
 
 @end
 
-@implementation NSData (Convert)
+@implementation NSData (DKD_Convert)
 
-- (NSString *)UTF8String {
+- (NSString *)dkd_UTF8String {
     const unsigned char * bytes = self.bytes;
     NSUInteger length = self.length;
     while (length > 0) {
@@ -57,40 +57,40 @@
 
 @end
 
-@implementation NSData (JsON)
+@implementation NSData (DKD_JSON)
 
-- (id)jsonObject {
+- (id)dkd_jsonObject {
     NSError *error = nil;
     id obj = [NSJSONSerialization JSONObjectWithData:self options:NSJSONReadingAllowFragments error:&error];
     NSAssert(!error, @"json error: %@", error);
     return obj;
 }
 
-- (id)jsonMutableContainer {
+- (id)dkd_jsonMutableContainer {
     NSError *error = nil;
     id obj = [NSJSONSerialization JSONObjectWithData:self options:NSJSONReadingMutableContainers error:&error];
     NSAssert(!error, @"json error: %@", error);
     return obj;
 }
 
-- (NSString *)jsonString {
-    return [self jsonObject];
+- (NSString *)dkd_jsonString {
+    return [self dkd_jsonObject];
 }
 
-- (NSArray *)jsonArray {
-    return [self jsonObject];
+- (NSArray *)dkd_jsonArray {
+    return [self dkd_jsonObject];
 }
 
-- (NSDictionary *)jsonDictionary {
-    return [self jsonObject];
+- (NSDictionary *)dkd_jsonDictionary {
+    return [self dkd_jsonObject];
 }
 
-- (NSMutableArray *)jsonMutableArray {
-    return [self jsonMutableContainer];
+- (NSMutableArray *)dkd_jsonMutableArray {
+    return [self dkd_jsonMutableContainer];
 }
 
-- (NSMutableDictionary *)jsonMutableDictionary {
-    return [self jsonMutableContainer];
+- (NSMutableDictionary *)dkd_jsonMutableDictionary {
+    return [self dkd_jsonMutableContainer];
 }
 
 @end

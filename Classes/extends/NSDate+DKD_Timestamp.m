@@ -6,15 +6,15 @@
 //  Copyright © 2018 DIM Group. All rights reserved.
 //
 
-#import "NSDate+Timestamp.h"
+#import "NSDate+DKD_Timestamp.h"
 
-NSNumber *NSNumberFromDate(const NSDate *date) {
+NSNumber * DKD_NSNumberFromDate(const NSDate *date) {
     assert(date);
     NSTimeInterval ti = [date timeIntervalSince1970];
     return [[NSNumber alloc] initWithLong:ti];
 }
 
-NSDate *NSDateFromNumber(const NSNumber *timestamp) {
+NSDate * DKD_NSDateFromNumber(const NSNumber *timestamp) {
     NSTimeInterval ti = [timestamp doubleValue];
     //assert(ti > 1);
     return [[NSDate alloc] initWithTimeIntervalSince1970:ti];

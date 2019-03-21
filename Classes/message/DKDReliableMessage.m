@@ -6,8 +6,8 @@
 //  Copyright © 2018 DIM Group. All rights reserved.
 //
 
-#import "NSData+Crypto.h"
-#import "NSString+Crypto.h"
+#import "NSData+DKD_Encode.h"
+#import "NSString+DKD_Encode.h"
 
 #import "DKDReliableMessage.h"
 
@@ -54,7 +54,7 @@
                           envelope:env]) {
         // signature
         if (CT) {
-            [_storeDictionary setObject:[CT base64Encode] forKey:@"signature"];
+            [_storeDictionary setObject:[CT dkd_base64Encode] forKey:@"signature"];
             _signature = [CT copy];
         } else {
             _signature = nil;
@@ -74,7 +74,7 @@
                           envelope:env]) {
         // signature
         if (CT) {
-            [_storeDictionary setObject:[CT base64Encode] forKey:@"signature"];
+            [_storeDictionary setObject:[CT dkd_base64Encode] forKey:@"signature"];
             _signature = [CT copy];
         } else {
             _signature = nil;
@@ -104,7 +104,7 @@
     if (!_signature) {
         NSString *CT = [_storeDictionary objectForKey:@"signature"];
         NSAssert(CT, @"signature cannot be empty");
-        _signature = [CT base64Decode];
+        _signature = [CT dkd_base64Decode];
     }
     return _signature;
 }

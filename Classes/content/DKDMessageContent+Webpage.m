@@ -6,8 +6,8 @@
 //  Copyright © 2018 DIM Group. All rights reserved.
 //
 
-#import "NSData+Crypto.h"
-#import "NSString+Crypto.h"
+#import "NSData+DKD_Encode.h"
+#import "NSString+DKD_Encode.h"
 
 #import "DKDMessageContent+Webpage.h"
 
@@ -36,7 +36,7 @@
         
         // icon
         if (icon) {
-            NSString *str = [icon base64Encode];
+            NSString *str = [icon dkd_base64Encode];
             [_storeDictionary setObject:str forKey:@"icon"];
         }
     }
@@ -53,7 +53,7 @@
 
 - (NSData *)icon {
     NSString *str = [_storeDictionary objectForKey:@"icon"];
-    return [str base64Decode];
+    return [str dkd_base64Decode];
 }
 
 @end

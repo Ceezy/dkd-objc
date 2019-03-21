@@ -6,11 +6,11 @@
 //  Copyright © 2018 DIM Group. All rights reserved.
 //
 
-#import "NSString+Crypto.h"
+#import "NSString+DKD_Encode.h"
 
 @implementation NSString (Decode)
 
-- (NSData *)base64Decode {
+- (NSData *)dkd_base64Decode {
     NSDataBase64DecodingOptions opt;
     opt = NSDataBase64DecodingIgnoreUnknownCharacters;
     return [[NSData alloc] initWithBase64EncodedString:self options:opt];

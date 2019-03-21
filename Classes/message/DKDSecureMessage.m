@@ -6,8 +6,8 @@
 //  Copyright © 2018 DIM Group. All rights reserved.
 //
 
-#import "NSData+Crypto.h"
-#import "NSString+Crypto.h"
+#import "NSData+DKD_Encode.h"
+#import "NSString+DKD_Encode.h"
 
 #import "DKDEnvelope.h"
 
@@ -41,7 +41,7 @@
         // content data
         if (content) {
             _data = [content copy];
-            [_storeDictionary setObject:[content base64Encode] forKey:@"data"];
+            [_storeDictionary setObject:[content dkd_base64Encode] forKey:@"data"];
         } else {
             _data = nil;
         }
@@ -49,7 +49,7 @@
         // encrypted key
         if (key) {
             _encryptedKey = [key copy];
-            [_storeDictionary setObject:[key base64Encode] forKey:@"key"];
+            [_storeDictionary setObject:[key dkd_base64Encode] forKey:@"key"];
         } else {
             _encryptedKey = nil;
         }
@@ -68,7 +68,7 @@
         // content data
         if (content) {
             _data = [content copy];
-            [_storeDictionary setObject:[content base64Encode] forKey:@"data"];
+            [_storeDictionary setObject:[content dkd_base64Encode] forKey:@"data"];
         } else {
             _data = nil;
         }
@@ -112,7 +112,7 @@
     if (!_data) {
         NSString *content = [_storeDictionary objectForKey:@"data"];
         NSAssert(content, @"content data cannot be empty");
-        _data = [content base64Decode];
+        _data = [content dkd_base64Decode];
     }
     return _data;
 }
@@ -121,7 +121,7 @@
     if (!_encryptedKey) {
         NSString *key = [_storeDictionary objectForKey:@"key"];
         if (key) {
-            _encryptedKey = [key base64Decode];
+            _encryptedKey = [key dkd_base64Decode];
         } else {
             // get from the key map
             const NSString *ID = self.envelope.receiver;
@@ -180,12 +180,12 @@
 
 - (NSData *)encryptedKeyForID:(const NSString *)ID {
     NSString *encode = [_storeDictionary objectForKey:ID];
-    return [encode base64Decode];
+    return [encode dkd_base64Decode];
 }
 
 - (void)setEncryptedKey:(NSData *)key forID:(const NSString *)ID {
     if (key) {
-        NSString *encode = [key base64Encode];
+        NSString *encode = [key dkd_base64Encode];
         [_storeDictionary setObject:encode forKey:ID];
     } else {
         [_storeDictionary removeObjectForKey:ID];

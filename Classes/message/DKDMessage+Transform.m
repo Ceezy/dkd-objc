@@ -6,7 +6,7 @@
 //  Copyright © 2019 DIM Group. All rights reserved.
 //
 
-#import "NSData+Crypto.h"
+#import "NSData+DKD_Encode.h"
 
 #import "DKDEnvelope.h"
 
@@ -23,7 +23,7 @@
     }
     NSMutableDictionary *mDict = [self mutableCopy];
     [mDict removeObjectForKey:@"content"];
-    [mDict setObject:[data base64Encode] forKey:@"data"];
+    [mDict setObject:[data dkd_base64Encode] forKey:@"data"];
     return mDict;
 }
 
@@ -41,7 +41,7 @@
     NSData *key;
     key = [self.delegate message:self encryptKey:password forReceiver:ID];
     if (key) {
-        [mDict setObject:[key base64Encode] forKey:@"key"];
+        [mDict setObject:[key dkd_base64Encode] forKey:@"key"];
     } else {
         NSLog(@"reused key: %@", password);
     }
@@ -68,7 +68,7 @@
     for (NSString *ID in members) {
         key = [self.delegate message:self encryptKey:password forReceiver:ID];
         if (key) {
-            [keyMap setObject:[key base64Encode] forKey:ID];
+            [keyMap setObject:[key dkd_base64Encode] forKey:ID];
         }
     }
     if (keyMap.count > 0) {
@@ -172,7 +172,7 @@
     }
     // pack message
     NSMutableDictionary *mDict = [self mutableCopy];
-    [mDict setObject:[signature base64Encode] forKey:@"signature"];
+    [mDict setObject:[signature dkd_base64Encode] forKey:@"signature"];
     return [[DKDReliableMessage alloc] initWithDictionary:mDict];
 }
 

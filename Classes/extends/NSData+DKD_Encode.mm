@@ -6,11 +6,11 @@
 //  Copyright © 2018 DIM Group. All rights reserved.
 //
 
-#import "NSData+Crypto.h"
+#import "NSData+DKD_Encode.h"
 
-@implementation NSData (Encode)
+@implementation NSData (DKD_Encode)
 
-- (NSString *)base64Encode {
+- (NSString *)dkd_base64Encode {
     NSDataBase64EncodingOptions opt;
     opt = NSDataBase64EncodingEndLineWithCarriageReturn;
     return [self base64EncodedStringWithOptions:opt];

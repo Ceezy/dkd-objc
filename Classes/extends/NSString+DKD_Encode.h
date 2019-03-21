@@ -10,9 +10,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NSString (Decode)
+@interface NSString (DKD_Decode)
 
-- (NSData *)base64Decode;
+- (NSData *)dkd_base64Decode;
 
 @end
 

@@ -6,7 +6,7 @@
 //  Copyright © 2019 DIM Group. All rights reserved.
 //
 
-#import "NSDate+Timestamp.h"
+#import "NSDate+DKD_Timestamp.h"
 
 #import "DKDMessageContent+History.h"
 
@@ -21,7 +21,7 @@
         }
         // time
         NSDate *time = [[NSDate alloc] init];
-        NSNumber *timestemp = NSNumberFromDate(time);
+        NSNumber *timestemp = DKD_NSNumberFromDate(time);
         [_storeDictionary setObject:timestemp forKey:@"time"];
     }
     return self;
@@ -30,7 +30,7 @@
 - (NSDate *)time {
     NSNumber *timestamp = [_storeDictionary objectForKey:@"time"];
     NSAssert(timestamp, @"time error: %@", _storeDictionary);
-    return NSDateFromNumber(timestamp);
+    return DKD_NSDateFromNumber(timestamp);
 }
 
 @end

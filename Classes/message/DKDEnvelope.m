@@ -6,7 +6,7 @@
 //  Copyright © 2018 DIM Group. All rights reserved.
 //
 
-#import "NSDate+Timestamp.h"
+#import "NSDate+DKD_Timestamp.h"
 
 #import "DKDEnvelope.h"
 
@@ -44,7 +44,7 @@
     }
     NSDictionary *dict = @{@"sender"  :from,
                            @"receiver":to,
-                           @"time"    :NSNumberFromDate(time),
+                           @"time"    :DKD_NSNumberFromDate(time),
                            };
     if (self = [super initWithDictionary:dict]) {
         _sender = from;
@@ -93,7 +93,7 @@
     if (!_time) {
         NSNumber *timestamp = [_storeDictionary objectForKey:@"time"];
         NSAssert(timestamp, @"time error: %@", _storeDictionary);
-        _time = NSDateFromNumber(timestamp);
+        _time = DKD_NSDateFromNumber(timestamp);
     }
     return _time;
 }

@@ -6,7 +6,7 @@
 //  Copyright © 2018 DIM Group. All rights reserved.
 //
 
-#import "NSString+Crypto.h"
+#import "NSString+DKD_Encode.h"
 
 #import "DKDMessageContent+File.h"
 
@@ -37,7 +37,7 @@
 
 - (NSData *)snapshot {
     NSString *ss = [_storeDictionary objectForKey:@"snapshot"];
-    return [ss base64Decode];
+    return [ss dkd_base64Decode];
 }
 
 @end

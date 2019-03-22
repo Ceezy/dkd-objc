@@ -10,6 +10,8 @@
 
 #import <DaoKeDao/DaoKeDao.h>
 
+#import "NSObject+DKD_JSON.h"
+
 @interface DaoKeDaoTests : XCTestCase
 
 @end
@@ -44,13 +46,13 @@
     DKDMessageContent *text;
     text = [[DKDMessageContent alloc] initWithDictionary:dict];
     NSLog(@"text: %@", text);
-    NSLog(@"json: %@", JSONStringFromObject(text));
+    NSLog(@"json: %@", [text dkd_jsonString]);
     
     NSString *json = @"{\"type\":1,\"sn\":3069910943,\"text\":\"Hey guy!\"}";
     NSLog(@"string: %@", json);
     text = [[DKDMessageContent alloc] initWithJSONString:json];
     NSLog(@"text: %@", text);
-    NSLog(@"json: %@", JSONStringFromObject(text));
+    NSLog(@"json: %@", [text dkd_jsonString]);
 }
 
 - (void)testMessage {
@@ -58,7 +60,7 @@
     DKDMessageContent *text;
     text = [[DKDMessageContent alloc] initWithText:@"Hey guy!"];
     NSLog(@"text: %@", text);
-    NSLog(@"json: %@", JSONStringFromObject(text));
+    NSLog(@"json: %@", [text dkd_jsonString]);
     NSAssert(text.type == DKDMessageType_Text, @"msg type error");
     
     NSString *ID1 = @"hulk@4YeVEN3aUnvC1DNUufCq1bs9zoBSJTzVEj";
@@ -70,23 +72,7 @@
                                              receiver:ID2
                                                  time:nil];
     NSLog(@"instant msg: %@", iMsg);
-    NSLog(@"json: %@", JSONStringFromObject(iMsg));
-}
-
-NSString * JSONStringFromObject(NSObject *obj) {
-    if (![NSJSONSerialization isValidJSONObject:obj]) {
-        return nil;
-    }
-    
-    NSError *error = nil;
-    NSData *data = [NSJSONSerialization dataWithJSONObject:obj
-                                                   options:NSJSONWritingSortedKeys
-                                                     error:&error];
-    if (error) {
-        NSLog(@"json error: %@", error);
-        return nil;
-    }
-    return [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    NSLog(@"json: %@", [iMsg dkd_jsonString]);
 }
 
 @end

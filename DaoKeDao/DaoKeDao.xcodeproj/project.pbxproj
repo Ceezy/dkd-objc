@@ -623,6 +623,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4N8627W97S;
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../Classes/extends\"";
 				INFOPLIST_FILE = DaoKeDaoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -640,6 +641,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4N8627W97S;
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../Classes/extends\"";
 				INFOPLIST_FILE = DaoKeDaoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

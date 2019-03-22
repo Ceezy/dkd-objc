@@ -17,6 +17,7 @@ Pod::Spec.new do |s|
 
     s.subspec 'extends' do |ss|
         ss.source_files = 'Classes/extends/*.{h,m}'
+        ss.public_header_files = 'Classes/extends/*.h'
     end
 
     s.subspec 'types' do |ss|

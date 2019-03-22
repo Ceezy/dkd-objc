@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name             = "DaoKeDao"
-    s.version          = "0.0.1"
+    s.version          = "0.0.2"
     s.summary          = "The message module for DIM."
     s.homepage         = "https://github.com/Ceezy/dkd-objc"
     s.license          = { :type => 'MIT', :file => 'LICENSE' }
@@ -17,7 +17,6 @@ Pod::Spec.new do |s|
 
     s.subspec 'extends' do |ss|
         ss.source_files = 'Classes/extends/*.{h,m}'
-        ss.public_header_files = 'Classes/extends/*.h'
     end
 
     s.subspec 'types' do |ss|
